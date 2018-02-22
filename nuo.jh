@@ -1,0 +1,70 @@
+entity Bulletin {
+	content String,
+	user Long,
+    createTime Long
+}
+
+entity Project {
+	totalAmount Long,
+    tokensAmout Long,
+    tokensHardTop Long,
+    tokensName String,
+    exchange String,
+    concept String,
+    code String,
+    crowdfundingLevel ProjectLevel,
+    crowdfundingTarget Integer,
+    depotLock Integer,
+    remarks String,
+    website String,
+    illustration String,
+    grade Integer,
+    crowdfundingPlatform String,
+    issueDate Long,
+    issueEndDate Long,
+    serviceCharge Integer,
+    minCrowdfundingTarget Long,
+    user Long
+}
+entity CrowdfundingWallet {
+	tokensType TokensType,
+    crowdfundingAmount Long,
+    crowdfundingAddress String
+}
+
+entity Investment {
+	amount Long,
+    sourceAddress String,
+    investmentTime Long,
+    user Long
+}
+
+
+enum TokensType {
+      ETH
+}
+
+enum ProjectLevel {
+      AAA, AA, A, BBB, BB
+}
+relationship OneToOne {
+	CrowdfundingWallet{project} to Project
+}
+
+relationship ManyToOne {
+	Investment{project} to Project
+}
+
+
+
+
+// Set pagination options
+// paginate JobHistory, Employee with infinite-scroll
+paginate Project, Investment, Bulletin with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Project, Investment, Bulletin
+// Set an angular suffix
+angularSuffix * with mySuffix
