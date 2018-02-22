@@ -1,0 +1,42 @@
+
+{
+    "nuoApp": {
+        "project" : {
+            "home": {
+                "title": "Projects",
+                "createLabel": "创建新 Project",
+                "createOrEditLabel": "创建或编辑 Project",
+                "search": "查找 Project"
+            },
+            "created": "Project {{ param }} 创建成功",
+            "updated": "Project {{ param }} 更新成功",
+            "deleted": "Project {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Project {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Project"
+            },
+            "totalAmount": "Total Amount",
+            "tokensAmout": "Tokens Amout",
+            "tokensHardTop": "Tokens Hard Top",
+            "tokensName": "Tokens Name",
+            "exchange": "Exchange",
+            "concept": "Concept",
+            "code": "Code",
+            "crowdfundingLevel": "Crowdfunding Level",
+            "crowdfundingTarget": "Crowdfunding Target",
+            "depotLock": "Depot Lock",
+            "remarks": "Remarks",
+            "website": "Website",
+            "illustration": "Illustration",
+            "grade": "Grade",
+            "crowdfundingPlatform": "Crowdfunding Platform",
+            "issueDate": "Issue Date",
+            "issueEndDate": "Issue End Date",
+            "serviceCharge": "Service Charge",
+            "minCrowdfundingTarget": "Min Crowdfunding Target",
+            "user": "User"
+        }
+    }
+}

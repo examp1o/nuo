@@ -1,0 +1,130 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myProjectLabel" jhiTranslate="nuoApp.project.home.createOrEditLabel">Create or edit a Project</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!project.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="project.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.totalAmount" for="field_totalAmount">Total Amount</label>
+            <input type="number" class="form-control" name="totalAmount" id="field_totalAmount"
+                [(ngModel)]="project.totalAmount" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.tokensAmout" for="field_tokensAmout">Tokens Amout</label>
+            <input type="number" class="form-control" name="tokensAmout" id="field_tokensAmout"
+                [(ngModel)]="project.tokensAmout" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.tokensHardTop" for="field_tokensHardTop">Tokens Hard Top</label>
+            <input type="number" class="form-control" name="tokensHardTop" id="field_tokensHardTop"
+                [(ngModel)]="project.tokensHardTop" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.tokensName" for="field_tokensName">Tokens Name</label>
+            <input type="text" class="form-control" name="tokensName" id="field_tokensName"
+                [(ngModel)]="project.tokensName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.exchange" for="field_exchange">Exchange</label>
+            <input type="text" class="form-control" name="exchange" id="field_exchange"
+                [(ngModel)]="project.exchange" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.concept" for="field_concept">Concept</label>
+            <input type="text" class="form-control" name="concept" id="field_concept"
+                [(ngModel)]="project.concept" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.code" for="field_code">Code</label>
+            <input type="text" class="form-control" name="code" id="field_code"
+                [(ngModel)]="project.code" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.crowdfundingLevel" for="field_crowdfundingLevel">Crowdfunding Level</label>
+            <select class="form-control" name="crowdfundingLevel" [(ngModel)]="project.crowdfundingLevel" id="field_crowdfundingLevel" >
+                <option value="AAA">{{'nuoApp.ProjectLevel.AAA' | translate}}</option>
+                <option value="AA">{{'nuoApp.ProjectLevel.AA' | translate}}</option>
+                <option value="A">{{'nuoApp.ProjectLevel.A' | translate}}</option>
+                <option value="BBB">{{'nuoApp.ProjectLevel.BBB' | translate}}</option>
+                <option value="BB">{{'nuoApp.ProjectLevel.BB' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.crowdfundingTarget" for="field_crowdfundingTarget">Crowdfunding Target</label>
+            <input type="number" class="form-control" name="crowdfundingTarget" id="field_crowdfundingTarget"
+                [(ngModel)]="project.crowdfundingTarget" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.depotLock" for="field_depotLock">Depot Lock</label>
+            <input type="number" class="form-control" name="depotLock" id="field_depotLock"
+                [(ngModel)]="project.depotLock" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.remarks" for="field_remarks">Remarks</label>
+            <input type="text" class="form-control" name="remarks" id="field_remarks"
+                [(ngModel)]="project.remarks" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.website" for="field_website">Website</label>
+            <input type="text" class="form-control" name="website" id="field_website"
+                [(ngModel)]="project.website" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.illustration" for="field_illustration">Illustration</label>
+            <input type="text" class="form-control" name="illustration" id="field_illustration"
+                [(ngModel)]="project.illustration" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.grade" for="field_grade">Grade</label>
+            <input type="number" class="form-control" name="grade" id="field_grade"
+                [(ngModel)]="project.grade" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.crowdfundingPlatform" for="field_crowdfundingPlatform">Crowdfunding Platform</label>
+            <input type="text" class="form-control" name="crowdfundingPlatform" id="field_crowdfundingPlatform"
+                [(ngModel)]="project.crowdfundingPlatform" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.issueDate" for="field_issueDate">Issue Date</label>
+            <input type="number" class="form-control" name="issueDate" id="field_issueDate"
+                [(ngModel)]="project.issueDate" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.issueEndDate" for="field_issueEndDate">Issue End Date</label>
+            <input type="number" class="form-control" name="issueEndDate" id="field_issueEndDate"
+                [(ngModel)]="project.issueEndDate" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.serviceCharge" for="field_serviceCharge">Service Charge</label>
+            <input type="number" class="form-control" name="serviceCharge" id="field_serviceCharge"
+                [(ngModel)]="project.serviceCharge" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.minCrowdfundingTarget" for="field_minCrowdfundingTarget">Min Crowdfunding Target</label>
+            <input type="number" class="form-control" name="minCrowdfundingTarget" id="field_minCrowdfundingTarget"
+                [(ngModel)]="project.minCrowdfundingTarget" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="nuoApp.project.user" for="field_user">User</label>
+            <input type="number" class="form-control" name="user" id="field_user"
+                [(ngModel)]="project.user" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

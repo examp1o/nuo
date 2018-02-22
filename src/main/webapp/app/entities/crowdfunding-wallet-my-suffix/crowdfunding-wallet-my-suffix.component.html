@@ -1,0 +1,81 @@
+<div>
+    <h2>
+        <span jhiTranslate="nuoApp.crowdfundingWallet.home.title">Crowdfunding Wallets</span>
+        <button class="btn btn-primary float-right jh-create-entity create-crowdfunding-wallet-my-suffix" [routerLink]="['/', { outlets: { popup: ['crowdfunding-wallet-my-suffix-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="nuoApp.crowdfundingWallet.home.createLabel">
+            Create new Crowdfunding Wallet
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'nuoApp.crowdfundingWallet.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="crowdfundingWallets">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="nuoApp.crowdfundingWallet.tokensType">Tokens Type</span></th>
+            <th><span jhiTranslate="nuoApp.crowdfundingWallet.crowdfundingAmount">Crowdfunding Amount</span></th>
+            <th><span jhiTranslate="nuoApp.crowdfundingWallet.crowdfundingAddress">Crowdfunding Address</span></th>
+            <th><span jhiTranslate="nuoApp.crowdfundingWallet.project">Project</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let crowdfundingWallet of crowdfundingWallets ;trackBy: trackId">
+                <td><a [routerLink]="['../crowdfunding-wallet-my-suffix', crowdfundingWallet.id ]">{{crowdfundingWallet.id}}</a></td>
+                <td jhiTranslate="{{'nuoApp.TokensType.' + crowdfundingWallet.tokensType}}">{{crowdfundingWallet.tokensType}}</td>
+                <td>{{crowdfundingWallet.crowdfundingAmount}}</td>
+                <td>{{crowdfundingWallet.crowdfundingAddress}}</td>
+                <td>
+                    <div *ngIf="crowdfundingWallet.projectId">
+                        <a [routerLink]="['../project-my-suffix', crowdfundingWallet.projectId  ]" >{{crowdfundingWallet.projectId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../crowdfunding-wallet-my-suffix', crowdfundingWallet.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'crowdfunding-wallet-my-suffix/'+ crowdfundingWallet.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'crowdfunding-wallet-my-suffix/'+ crowdfundingWallet.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

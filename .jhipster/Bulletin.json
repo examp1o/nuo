@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "content",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "user",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "createTime",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20180222070543",
+    "entityTableName": "bulletin",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

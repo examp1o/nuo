@@ -1,0 +1,34 @@
+
+<div *ngIf="bulletin">
+    <h2><span jhiTranslate="nuoApp.bulletin.detail.title">Bulletin</span> {{bulletin.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="nuoApp.bulletin.content">Content</span></dt>
+        <dd>
+            <span>{{bulletin.content}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.bulletin.user">User</span></dt>
+        <dd>
+            <span>{{bulletin.user}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.bulletin.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{bulletin.createTime}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'bulletin-my-suffix/'+ bulletin.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

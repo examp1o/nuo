@@ -1,0 +1,27 @@
+
+{
+    "nuoApp": {
+        "investment" : {
+            "home": {
+                "title": "Investments",
+                "createLabel": "Create a new Investment",
+                "createOrEditLabel": "Create or edit a Investment",
+                "search": "Search for Investment"
+            },
+            "created": "A new Investment is created with identifier {{ param }}",
+            "updated": "A Investment is updated with identifier {{ param }}",
+            "deleted": "A Investment is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Investment {{ id }}?"
+            },
+            "detail": {
+                "title": "Investment"
+            },
+            "amount": "Amount",
+            "sourceAddress": "Source Address",
+            "investmentTime": "Investment Time",
+            "user": "User",
+            "project": "Project"
+        }
+    }
+}

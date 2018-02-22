@@ -1,0 +1,12 @@
+{
+    "nuoApp": {
+        "ProjectLevel" : {
+            "null": "",
+            "AAA": "AAA",
+            "AA": "AA",
+            "A": "A",
+            "BBB": "BBB",
+            "BB": "BB"
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "project",
+            "otherEntityName": "project",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "amount",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "sourceAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "investmentTime",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "user",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20180222070546",
+    "entityTableName": "investment",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

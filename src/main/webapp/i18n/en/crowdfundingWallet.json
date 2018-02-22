@@ -1,0 +1,26 @@
+
+{
+    "nuoApp": {
+        "crowdfundingWallet" : {
+            "home": {
+                "title": "Crowdfunding Wallets",
+                "createLabel": "Create a new Crowdfunding Wallet",
+                "createOrEditLabel": "Create or edit a Crowdfunding Wallet",
+                "search": "Search for Crowdfunding Wallet"
+            },
+            "created": "A new Crowdfunding Wallet is created with identifier {{ param }}",
+            "updated": "A Crowdfunding Wallet is updated with identifier {{ param }}",
+            "deleted": "A Crowdfunding Wallet is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Crowdfunding Wallet {{ id }}?"
+            },
+            "detail": {
+                "title": "Crowdfunding Wallet"
+            },
+            "tokensType": "Tokens Type",
+            "crowdfundingAmount": "Crowdfunding Amount",
+            "crowdfundingAddress": "Crowdfunding Address",
+            "project": "Project"
+        }
+    }
+}

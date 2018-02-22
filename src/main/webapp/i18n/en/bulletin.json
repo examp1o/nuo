@@ -1,0 +1,25 @@
+
+{
+    "nuoApp": {
+        "bulletin" : {
+            "home": {
+                "title": "Bulletins",
+                "createLabel": "Create a new Bulletin",
+                "createOrEditLabel": "Create or edit a Bulletin",
+                "search": "Search for Bulletin"
+            },
+            "created": "A new Bulletin is created with identifier {{ param }}",
+            "updated": "A Bulletin is updated with identifier {{ param }}",
+            "deleted": "A Bulletin is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Bulletin {{ id }}?"
+            },
+            "detail": {
+                "title": "Bulletin"
+            },
+            "content": "Content",
+            "user": "User",
+            "createTime": "Create Time"
+        }
+    }
+}

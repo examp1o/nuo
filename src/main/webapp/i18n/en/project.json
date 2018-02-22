@@ -1,0 +1,42 @@
+
+{
+    "nuoApp": {
+        "project" : {
+            "home": {
+                "title": "Projects",
+                "createLabel": "Create a new Project",
+                "createOrEditLabel": "Create or edit a Project",
+                "search": "Search for Project"
+            },
+            "created": "A new Project is created with identifier {{ param }}",
+            "updated": "A Project is updated with identifier {{ param }}",
+            "deleted": "A Project is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Project {{ id }}?"
+            },
+            "detail": {
+                "title": "Project"
+            },
+            "totalAmount": "Total Amount",
+            "tokensAmout": "Tokens Amout",
+            "tokensHardTop": "Tokens Hard Top",
+            "tokensName": "Tokens Name",
+            "exchange": "Exchange",
+            "concept": "Concept",
+            "code": "Code",
+            "crowdfundingLevel": "Crowdfunding Level",
+            "crowdfundingTarget": "Crowdfunding Target",
+            "depotLock": "Depot Lock",
+            "remarks": "Remarks",
+            "website": "Website",
+            "illustration": "Illustration",
+            "grade": "Grade",
+            "crowdfundingPlatform": "Crowdfunding Platform",
+            "issueDate": "Issue Date",
+            "issueEndDate": "Issue End Date",
+            "serviceCharge": "Service Charge",
+            "minCrowdfundingTarget": "Min Crowdfunding Target",
+            "user": "User"
+        }
+    }
+}

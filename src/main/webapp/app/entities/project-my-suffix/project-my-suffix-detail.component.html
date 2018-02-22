@@ -1,0 +1,102 @@
+
+<div *ngIf="project">
+    <h2><span jhiTranslate="nuoApp.project.detail.title">Project</span> {{project.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="nuoApp.project.totalAmount">Total Amount</span></dt>
+        <dd>
+            <span>{{project.totalAmount}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.project.tokensAmout">Tokens Amout</span></dt>
+        <dd>
+            <span>{{project.tokensAmout}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.project.tokensHardTop">Tokens Hard Top</span></dt>
+        <dd>
+            <span>{{project.tokensHardTop}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.project.tokensName">Tokens Name</span></dt>
+        <dd>
+            <span>{{project.tokensName}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.project.exchange">Exchange</span></dt>
+        <dd>
+            <span>{{project.exchange}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.project.concept">Concept</span></dt>
+        <dd>
+            <span>{{project.concept}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.project.code">Code</span></dt>
+        <dd>
+            <span>{{project.code}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.project.crowdfundingLevel">Crowdfunding Level</span></dt>
+        <dd>
+            <span jhiTranslate="{{'nuoApp.ProjectLevel.' + project.crowdfundingLevel}}">{{project.crowdfundingLevel}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.project.crowdfundingTarget">Crowdfunding Target</span></dt>
+        <dd>
+            <span>{{project.crowdfundingTarget}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.project.depotLock">Depot Lock</span></dt>
+        <dd>
+            <span>{{project.depotLock}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.project.remarks">Remarks</span></dt>
+        <dd>
+            <span>{{project.remarks}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.project.website">Website</span></dt>
+        <dd>
+            <span>{{project.website}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.project.illustration">Illustration</span></dt>
+        <dd>
+            <span>{{project.illustration}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.project.grade">Grade</span></dt>
+        <dd>
+            <span>{{project.grade}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.project.crowdfundingPlatform">Crowdfunding Platform</span></dt>
+        <dd>
+            <span>{{project.crowdfundingPlatform}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.project.issueDate">Issue Date</span></dt>
+        <dd>
+            <span>{{project.issueDate}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.project.issueEndDate">Issue End Date</span></dt>
+        <dd>
+            <span>{{project.issueEndDate}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.project.serviceCharge">Service Charge</span></dt>
+        <dd>
+            <span>{{project.serviceCharge}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.project.minCrowdfundingTarget">Min Crowdfunding Target</span></dt>
+        <dd>
+            <span>{{project.minCrowdfundingTarget}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.project.user">User</span></dt>
+        <dd>
+            <span>{{project.user}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'project-my-suffix/'+ project.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

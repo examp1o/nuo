@@ -1,0 +1,44 @@
+
+<div *ngIf="investment">
+    <h2><span jhiTranslate="nuoApp.investment.detail.title">Investment</span> {{investment.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="nuoApp.investment.amount">Amount</span></dt>
+        <dd>
+            <span>{{investment.amount}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.investment.sourceAddress">Source Address</span></dt>
+        <dd>
+            <span>{{investment.sourceAddress}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.investment.investmentTime">Investment Time</span></dt>
+        <dd>
+            <span>{{investment.investmentTime}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.investment.user">User</span></dt>
+        <dd>
+            <span>{{investment.user}}</span>
+        </dd>
+        <dt><span jhiTranslate="nuoApp.investment.project">Project</span></dt>
+        <dd>
+            <div *ngIf="investment.projectId">
+                <a [routerLink]="['/project-my-suffix', investment.projectId]">{{investment.projectId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'investment-my-suffix/'+ investment.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

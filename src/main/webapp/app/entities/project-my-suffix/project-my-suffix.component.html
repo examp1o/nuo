@@ -1,0 +1,117 @@
+<div>
+    <h2>
+        <span jhiTranslate="nuoApp.project.home.title">Projects</span>
+        <button class="btn btn-primary float-right jh-create-entity create-project-my-suffix" [routerLink]="['/', { outlets: { popup: ['project-my-suffix-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="nuoApp.project.home.createLabel">
+            Create new Project
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'nuoApp.project.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="projects">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="totalAmount"><span jhiTranslate="nuoApp.project.totalAmount">Total Amount</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tokensAmout"><span jhiTranslate="nuoApp.project.tokensAmout">Tokens Amout</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tokensHardTop"><span jhiTranslate="nuoApp.project.tokensHardTop">Tokens Hard Top</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tokensName"><span jhiTranslate="nuoApp.project.tokensName">Tokens Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="exchange"><span jhiTranslate="nuoApp.project.exchange">Exchange</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="concept"><span jhiTranslate="nuoApp.project.concept">Concept</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="code"><span jhiTranslate="nuoApp.project.code">Code</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="crowdfundingLevel"><span jhiTranslate="nuoApp.project.crowdfundingLevel">Crowdfunding Level</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="crowdfundingTarget"><span jhiTranslate="nuoApp.project.crowdfundingTarget">Crowdfunding Target</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="depotLock"><span jhiTranslate="nuoApp.project.depotLock">Depot Lock</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="remarks"><span jhiTranslate="nuoApp.project.remarks">Remarks</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="website"><span jhiTranslate="nuoApp.project.website">Website</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="illustration"><span jhiTranslate="nuoApp.project.illustration">Illustration</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="grade"><span jhiTranslate="nuoApp.project.grade">Grade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="crowdfundingPlatform"><span jhiTranslate="nuoApp.project.crowdfundingPlatform">Crowdfunding Platform</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="issueDate"><span jhiTranslate="nuoApp.project.issueDate">Issue Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="issueEndDate"><span jhiTranslate="nuoApp.project.issueEndDate">Issue End Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="serviceCharge"><span jhiTranslate="nuoApp.project.serviceCharge">Service Charge</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="minCrowdfundingTarget"><span jhiTranslate="nuoApp.project.minCrowdfundingTarget">Min Crowdfunding Target</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="user"><span jhiTranslate="nuoApp.project.user">User</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let project of projects ;trackBy: trackId">
+                <td><a [routerLink]="['../project-my-suffix', project.id ]">{{project.id}}</a></td>
+                <td>{{project.totalAmount}}</td>
+                <td>{{project.tokensAmout}}</td>
+                <td>{{project.tokensHardTop}}</td>
+                <td>{{project.tokensName}}</td>
+                <td>{{project.exchange}}</td>
+                <td>{{project.concept}}</td>
+                <td>{{project.code}}</td>
+                <td jhiTranslate="{{'nuoApp.ProjectLevel.' + project.crowdfundingLevel}}">{{project.crowdfundingLevel}}</td>
+                <td>{{project.crowdfundingTarget}}</td>
+                <td>{{project.depotLock}}</td>
+                <td>{{project.remarks}}</td>
+                <td>{{project.website}}</td>
+                <td>{{project.illustration}}</td>
+                <td>{{project.grade}}</td>
+                <td>{{project.crowdfundingPlatform}}</td>
+                <td>{{project.issueDate}}</td>
+                <td>{{project.issueEndDate}}</td>
+                <td>{{project.serviceCharge}}</td>
+                <td>{{project.minCrowdfundingTarget}}</td>
+                <td>{{project.user}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../project-my-suffix', project.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'project-my-suffix/'+ project.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'project-my-suffix/'+ project.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="projects && projects.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "totalAmount",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "tokensAmout",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "tokensHardTop",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "tokensName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "exchange",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "concept",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "code",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "crowdfundingLevel",
+            "fieldType": "ProjectLevel",
+            "fieldValues": "AAA,AA,A,BBB,BB"
+        },
+        {
+            "fieldName": "crowdfundingTarget",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "depotLock",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "remarks",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "website",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "illustration",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "grade",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "crowdfundingPlatform",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "issueDate",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "issueEndDate",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "serviceCharge",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "minCrowdfundingTarget",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "user",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20180222070544",
+    "entityTableName": "project",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

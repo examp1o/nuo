@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "project",
+            "otherEntityName": "project",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "crowdfundingWallet"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "tokensType",
+            "fieldType": "TokensType",
+            "fieldValues": "ETH"
+        },
+        {
+            "fieldName": "crowdfundingAmount",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "crowdfundingAddress",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180222070545",
+    "entityTableName": "crowdfunding_wallet",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}
